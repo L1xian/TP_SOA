@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>xmlshema.xml</groupId>
-    <artifactId>tp1</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
-
-</project>
+<scheme>
+<coplextype name="Film"><sequence>
+         <element name="titre" type="string"></element>
+         <element name="annee" type="string"></element>
+         <element name="realisateur" type="string"></element>
+         <element name="role" type="string"></element>
+</sequence>
+         <attribute name="id" type="string"></attribute>
+         <attribute name="type" type="string"></attribute>
+</complextype>
+<element name="Producteur" type="tns:Producteur"></element>
+<complexType name="Producteur">
+         <sequence>
+                  <element name="nom" type="string"></element>
+                  <element name="Film" type="string"></element>
+         </sequence>
+</complextype>
+<element name="Cinema" type="tns:Cinema"></element>
+<complextype name="Cinema">
+         <sequence>
+                  <element name="Film" type="tns:Film"></element>
+                  <element name="producteur" type="tns:producteur"></element>
+         </sequence>
+</complextype>
+</scheme>
