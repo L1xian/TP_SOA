@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/shema" xmlns:tns="http://www.example.org/shema" elementFormDefault="qualified">
+
+
+    <element name="Cars" type="tns:Cars"></element>
+
+    <complexType name="Cars">
+    	<sequence>
+    		<element name="car_nom" type="string"></element>
+    		<element name="car_type" type="string"></element>
+    		<element name="car_plate" type="int"></element>
+            <element name="car_availability" type="boolean"></element>
+        </sequence>
+    	<attribute name="car_id" type="int"></attribute>
+    </complexType>
+
+    <element name="Client" type="tns:Client"></element>
+
+    <complexType name="Client">
+    	<sequence>
+    		<element name="cli_name" type="string"></element>
+    		<element name="cli_adr" type="string"></element>
+    		<element name="cli_email" type="string"></element>
+    		<element name="cli_num" type="string"></element>
+    	</sequence>
+    	<attribute name="cli_id" type="int"></attribute>
+    </complexType>
+
+
+    <element name="Contract" type="tns:Contract"></element>
+    
+    <complexType name="Contract">
+    	<sequence>
+    		<element ref="tns:Cars"></element>
+    		<element ref="tns:Client"></element>
+    		<element name="date_start" type="date"></element>
+    		<element name="date_return" type="boolean"></element>
+    	</sequence>
+    	<attribute name="cont_id" type="string"></attribute>
+    </complexType>
+</schema>
